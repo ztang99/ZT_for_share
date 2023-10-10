@@ -4,7 +4,7 @@
 
 # [[10-10-2023]]
 
-### ***Record for paths to BAMs & GVCFs****
+### ***Record for paths to BAMs & GVCFs***
 
 *BAM Paths*:
 - HG002: 
