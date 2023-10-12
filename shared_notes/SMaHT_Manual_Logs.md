@@ -1,4 +1,4 @@
->Created by Zitian [[09/06/2023]].
+Updated by Zitian [[10/12/2023]].
 
 ---
 
@@ -6,17 +6,30 @@
 
 ### ***Record for paths to BAMs & GVCFs***
 
-*BAM Paths*:
-- HG002: 
-	`/storage1/fs1/jin810-2/Active/Projects/SMaHT/data/bams_300x/HG002.bam`
-- HG005: 
-	`/storage1/fs1/jin810-2/Active/Projects/SMaHT/data/bams_300x/HG005.bam`
+***Parent Directory: all files listed below is in this parent directory:*** 
+`/storage1/fs1/jin810-2/Active/Projects/SMaHT/data`
 
-*GVCF Paths*:
-- HG002: 
-	`/storage1/fs1/jin810-2/Active/Projects/SMaHT/data/gvcfs_300x/hg002/hg002_pbgen_allvar.g.vcf`
-- HG005: 
-	`/storage1/fs1/jin810-2/Active/Projects/SMaHT/data/gvcfs_300x/hg002/hg002_pbgen_allvar.g.vcf`
+***File path for each sample***
+- *BAM Paths*:
+	- HG002:  `./bams_300x/HG002.bam`
+	- HG005:  `./bams_300x/HG005.bam`
+- *GVCF Paths*:
+	- HG002:  `./gvcfs_300x/hg002/hg002_pbgen_allvar.g.vcf`
+		- Num lines (excluding headers): 26, 144, 798
+	- HG005:  `./gvcfs_300x/hg005/hg005_pbgen_allvar.g.vcf`
+		- Num lines (excluding headers): 52, 433, 826
+
+***Joint Calling***
+- Joint-called VCF:
+	- **Path**: `./gvcfs_300x/combined_25.vcf.gz`
+		- Num lines (excluding headers): 7, 302, 096
+	- (gunzipped `./gvcfs_300x/combined_25.vcf` is stored in the same directory)
+- True mutation set:
+	- VCF file: `./gvcfs_300x/filtered_combined_25.vcf`
+		- Num lines (excluding headers): 331, 782
+	- BED file: `./gvcfs_300x/true_mutation_set.bed`
+- False positive set (tms +- 10bp):
+	- BED file: `./gvcfs_300x/false_positive_set.bed`
 
 # [[10-04-2023]]
 
