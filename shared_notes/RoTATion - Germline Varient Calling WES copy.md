@@ -488,7 +488,7 @@ mode="step1"
 /opt/conda/bin/python /path/to/Test_Hail_annotation_v2.py -i $variant_table -o $Annotate_path -m $mode -p $pheno
 
 # un-interactive mode for actual job execution
-bsub -g /tang.zitian/CAKUT -G compute-jin810 -q general -n 8 -R 'rusage[mem=32GB]' -oo /path/to/logs/%J.log -a 'docker(spashleyfu/hail_vep_gnomad:latest)' /opt/conda/bin/python /path/to/Test_Hail_annotation_v2.py -i $variant_table -o $Annotate_path -m $mode -p $pheno
+bsub -G compute-jin810 -q general -n 8 -R 'rusage[mem=32GB]' -oo /path/to/logs/%J.log -a 'docker(spashleyfu/hail_vep_gnomad:latest)' /opt/conda/bin/python /path/to/Test_Hail_annotation_v2.py -i $variant_table -o $Annotate_path -m $mode -p $pheno
 ```
 
 ### Upload to [CADD web](https://cadd.gs.washington.edu/)
