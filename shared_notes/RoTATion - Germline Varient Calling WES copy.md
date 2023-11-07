@@ -82,7 +82,7 @@ data_path="/storage1/fs1/jin810/Active/References/Jeannie_Basta_WES_data_06-08-2
 samplenames=("RLTO_12_Child_C" "RLTO_12_Dad_B" "RLTO_12_Mom_A")
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 [ ! -d $out_path ] && mkdir -p $out_path
 echo "Output results to: ${out_path}"
 #######################################
@@ -124,7 +124,7 @@ BED="/storage1/fs1/jin810/Active/yung-chun/database/capture_bedfile/Exome-IDT_V1
 samplenames=("RLTO_12_Child_C" "RLTO_12_Dad_B" "RLTO_12_Mom_A")
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 [ ! -d $out_path ] && mkdir -p $out_path
 #######################################
 
@@ -143,12 +143,13 @@ done
 samplenames=("RLTO_12_Child_C" "RLTO_12_Dad_B" "RLTO_12_Mom_A")
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 [ ! -d $out_path ] && mkdir -p $out_path
 
-source /storage1/fs1/jin810/Active/testing/ztang/code/function/function_lst_ver1
+source /path/to/function/function_lst_ver1
+# source /storage1/fs1/jin810/Active/testing/ztang/code/function/function_lst_ver1
 
 for sample_name in "${samplenames[@]}"; do
 	re-END "${out_path}/${sample_name}_BP_germline.g.vcf.bgz"
@@ -172,8 +173,8 @@ REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
 BED="/storage1/fs1/jin810/Active/yung-chun/database/capture_bedfile/Exome-IDT_V1V2_span50bp.bed"
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
-map_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results/Combine_DBI/DBImapfile.map"
+out_path="/path/to/results"
+map_path="/path/to/Combine_DBI/DBImapfile.map"
 #######################################
 
 DBI_path="${out_path}/Combine_DBI"
@@ -207,7 +208,7 @@ tmp_dir="${DBI_path}/tmp"
 REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 DBI_path="${out_path}/Combine_DBI"
@@ -235,7 +236,7 @@ tmp_dir="${DBI_path}/tmp"
 REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 DBI_path="${out_path}/Combine_DBI"
@@ -268,7 +269,7 @@ BED="/storage1/fs1/jin810/Active/yung-chun/database/capture_bedfile/Exome-IDT_V1
 samplenames=("RLTO_12_Child_C" "RLTO_12_Dad_B" "RLTO_12_Mom_A")
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 QC_path="${out_path}/Quality_Control"
@@ -296,7 +297,7 @@ done
 REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 DBI_path="${out_path}/Combine_DBI"
@@ -306,7 +307,7 @@ export JAVA_HOME="/opt/conda"
 
 /opt/conda/bin/python3 /path/to/liftover_hg38tob37_v2.py "${DBI_path}/RLTO_12_joint_list_joint_vqsr_gs_sp_ln_reID.vcf.gz" "${QC_path}/RLTO_12_PCA.vcf.bgz"
 
-/opt/conda/bin/python3 /path/to/mergeBamMetrics.py /storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results/Quality_Control/merge_bammetrics_pathlist.txt "${QC_path}/RLTO_12_All_BamMetrics.tsv"
+/opt/conda/bin/python3 /path/to/mergeBamMetrics.py /path/to/results/Quality_Control/merge_bammetrics_pathlist.txt "${QC_path}/RLTO_12_All_BamMetrics.tsv"
 ```
 
 ##### `PCA_Laser.sh`
@@ -323,7 +324,7 @@ GDB="/storage1/fs1/jin810/Active/yung-chun/database/reference/LASER/HGDP_938.gen
 GRC="/storage1/fs1/jin810/Active/yung-chun/database/reference/LASER/HGDP_938.RefPC.coord"
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 DBI_path="${out_path}/Combine_DBI"
@@ -355,7 +356,7 @@ trace -p "${QC_path}/my_parameterfile" -k 10 -K 20 -s "${QC_path}/RLTO_12_PCA_Al
     GRC="/storage1/fs1/jin810/Active/yung-chun/database/reference/LASER/HGDP_938.RefPC.coord"
     
     ### Change the out_path accordingly ###
-    out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+    out_path="/path/tp/results"
     #######################################
     
     DBI_path="${out_path}/Combine_DBI"
@@ -410,7 +411,7 @@ Date=$(date +%Y%m%d)
 jobname="RLTO_12_denovo_"$Date
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 DBI_path="${out_path}/Combine_DBI"
@@ -448,7 +449,7 @@ Date=$(date +%Y%m%d)
 jobname="RLTO_12_denovo_"$Date
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 DBI_path="${out_path}/Combine_DBI"
@@ -472,7 +473,7 @@ ped="${Denovo_path}/RLTO_12_VariantTable.ped"
 pheno="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results/Annotation/RLTO_12_pheno.txt"
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 DBI_path="${out_path}/Combine_DBI"
@@ -531,7 +532,7 @@ cat GRCh38-v1.6_18c56bc037dc0a21ca7876f182b7d3f1.tsv | tail -n +3 >> $of
 ### Reference paths DO NOT CHANGE ###
 
 ### Change the out_path accordingly ###
-out_path="/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results"
+out_path="/path/to/results"
 #######################################
 
 Denovo_path="${out_path}/Denovo"
