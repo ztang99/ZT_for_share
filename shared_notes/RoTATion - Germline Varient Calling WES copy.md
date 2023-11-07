@@ -62,9 +62,9 @@ See below the paths to the fastq files for the one(1) trios mentioned above.
 >	- If a job takes more than a couple hours to run, you can submit it instead in **uninteractive mode**
 >	```bash
 >	#interactive 
->	bsub -Is -G compute-jin810 -q general-interactive -n 4 -R 'rusage[mem=32GB]' -a 'docker(xxx)' /bin/bash 
+>	bsub -Is -G compute-jin810 -q general-interactive -n 4 -R 'rusage[mem=32GB]' -a 'docker(nvcr.io/nvidia/clara/clara-parabricks:4.0.0-1)' /bin/bash 
 >	#uninteractive 
->	bsub -G compute-jin810 -q general -n 4 -R 'rusage[mem=32GB]' -a 'docker(xxx)' bash parabricksFsq2Bam.sh
+>	bsub -G compute-jin810 -q general -n 4 -R 'rusage[mem=32GB]' -a 'docker(nvcr.io/nvidia/clara/clara-parabricks:4.0.0-1)' bash parabricksFsq2Bam.sh
 >	```
 
 ##### `Fsq2Bam.sh`
