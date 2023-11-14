@@ -73,7 +73,7 @@ See below the paths to the fastq files for the one(1) trios mentioned above.
 #!/bin/bash
 
 # Request a docker with GPUs (uninteractively)
-# bsub -R 'gpuhost rusage[mem=100GB] span[hosts=1]' -G compute-jin810 -q general -a 'docker(nvcr.io/nvidia/clara/clara-parabricks:4.0.0-1)' -gpu "num=1:gmodel=TeslaV100_SXM2_32GB:j_exclusive=no" /bin/bash
+# bsub -R 'gpuhost rusage[mem=100GB] span[hosts=1]' -G compute-jin810 -q general -a 'docker(nvcr.io/nvidia/clara/clara-parabricks:4.0.0-1)' -gpu "num=1:gmodel=TeslaV100_SXM2_32GB:j_exclusive=no" bash Fsq2Bam.sh
 
 ### Reference paths DO NOT CHANGE ###
 REF="/storage1/fs1/bga/Active/gmsroot/gc2560/core/model_data/2887491634/build21f22873ebe0486c8e6f69c15435aa96/all_sequences.fa"
