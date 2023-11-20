@@ -119,6 +119,7 @@ done
 
 ```bash
 #!/bin/bash
+# bsub -Is -n 12 -M 100GB -R 'gpuhost rusage[mem=100GB] span[hosts=1]' -G compute-jin810 -q general-interactive -a 'docker(broadinstitute/gatk:latest)' /bin/bash
 
 ### Reference paths DO NOT CHANGE ###
 REF="/storage1/fs1/bga/Active/gmsroot/gc2560/core/model_data/2887491634/build21f22873ebe0486c8e6f69c15435aa96/all_sequences.fa"
@@ -141,6 +142,8 @@ done
 
 ```bash
 #!/bin/bash
+## Request Docker ##
+# bsub -Is -n 12 -M 100GB -R 'gpuhost rusage[mem=100GB] span[hosts=1]' -G compute-jin810 -q general-interactive -a 'docker(spashleyfu/hail_vep_gnomad:latest)' /bin/bash
 
 ### Input/Output paths ###
 samplenames=("RLTO_12_Child_C" "RLTO_12_Dad_B" "RLTO_12_Mom_A")
