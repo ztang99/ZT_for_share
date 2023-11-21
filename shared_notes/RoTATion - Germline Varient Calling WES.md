@@ -14,10 +14,13 @@ Before we start, make sure to take a look at the [on-boarding slides](https://do
 As a starting point, take a close look at [GATK introductory videos](https://www.youtube.com/playlist?list=PLjiXAZO27elDHGlQwfd06r7coiFtpPkvI) before actually dig into utilizing the pipeline. The videos contain relevant material in understanding how whole exome sequencing (WES) and whole genome sequencing (WGS) data is processed and analyzed.
 
 > For general introduction: # 1, 2, 3, 4, 7, 8 
+>
 > For germline variant calling: # 5, 9, 10, 11, 12, 13 
+>
 > For pipelining: # 16, 17
 
-# 1. Data paths
+
+# 1. Data Paths && Trouble Shooting
 
 See below the paths to the fastq files for the one(1) trios mentioned above.
 
@@ -28,6 +31,8 @@ See below the paths to the fastq files for the one(1) trios mentioned above.
 #data path
 /storage1/fs1/jin810/Active/References/Jeannie_Basta_WES_data_06-08-23/MGI_exome_sequencing_072021/RLTO_12
 ```
+
+### A lot of commonly seen errors and their solutions are listed in this [trouble shooting document](./Trouble%20Shooting.md).
 
 # 2. Before Variant Calling
 
@@ -41,7 +46,6 @@ See below the paths to the fastq files for the one(1) trios mentioned above.
 
 - You can find **ALL** the scripts under this directory: `/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion`.
 - You can either **COPY** the scripts above to your own directory or make your own bash scripts.
-- If you’re copying over the scripts, make sure you have the correct **permission** (reading/writing) to run them.
 - Run each script using `./path/to/script.sh`
 - If you are unsure about any input/output files, you can refer to `/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results` this folder (where I stored all output files when I tested this pipeline).
 
