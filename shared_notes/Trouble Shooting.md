@@ -2,7 +2,7 @@
 >Last modified [11-21-2023](11-21-2023).
 
 
-#### **Purpose:** this document is a collection of all errors that were encountered while running WES pipeline AND has been reported to Zitian (:D). Therefore, this doc contains solutions to some commonly-seen errors (but not all!).
+#### **Purpose:** this document is a collection of all errors that were encountered while running [WES pipeline](/RoTATion%20-%20Germline%20Varient%20Calling%20WES.md) AND has been reported to Zitian (:D). Therefore, this doc contains solutions to some commonly-seen errors (but not all!).
 
 ---
 
