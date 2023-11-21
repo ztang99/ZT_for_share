@@ -1,16 +1,15 @@
 >Created by Zitian.
->Last modified [11-07-2023](11-07-2023).
+>Last modified [11-21-2023](11-21-2023).
 
 ---
->[!Start]
->As part of your rotation, you will be analyzing germline variants out of whole genome sequencing (WGS) data of one(1) family/trio within a congenital anomalies in kidney and urinary tract (CAKUT) disease cohort.
+> **Start:** As part of your rotation, you will be analyzing germline variants out of whole genome sequencing (WGS) data of one(1) family/trio within a congenital anomalies in kidney and urinary tract (CAKUT) disease cohort.
 
 # Useful Resources
 
 Before we start, make sure to take a look at the [on-boarding slides](https://docs.google.com/presentation/d/1aT26I-gsQVd8RJbeNTUzcj9Tfp-lgLXpVIToHwHc8AQ/edit?usp=sharing).
 
->[!Note]
->Multiple steps in our pipeline incorporates the usage of Genomic Analysis Toolkit (GATK) variant calling tools.
+
+> **Notes:** Multiple steps in our pipeline incorporates the usage of Genomic Analysis Toolkit (GATK) variant calling tools.
 
 As a starting point, take a close look at [GATK introductory videos](https://www.youtube.com/playlist?list=PLjiXAZO27elDHGlQwfd06r7coiFtpPkvI) before actually dig into utilizing the pipeline. The videos contain relevant material in understanding how whole exome sequencing (WES) and whole genome sequencing (WGS) data is processed and analyzed.
 
@@ -22,8 +21,8 @@ As a starting point, take a close look at [GATK introductory videos](https://www
 
 See below the paths to the fastq files for the one(1) trios mentioned above.
 
->[!Note] 
->How does fastq files look like? cd into each directory below and visualize the fastq files.
+
+>**Note:** How does fastq files look like? cd into each directory below and visualize the fastq files.
 
 ```bash
 #data path
@@ -32,26 +31,23 @@ See below the paths to the fastq files for the one(1) trios mentioned above.
 
 # 2. Before Variant Calling
 
->[!Note]
->What is a fastq file? What is a BAM file? What is each type of file used for in bioinformatics analyses? How do you visualize a BAM/CRAM file?
+>**Note:** What is a fastq file? What is a BAM file? What is each type of file used for in bioinformatics analyses? How do you visualize a BAM/CRAM file?
 
 
 ## Script to use
 
->[!Note]
->For each and every script listed below, take a closer look at each of them, make necessary modifications to the output path(s), and try to understand the commands used before actually running the code.
+>**Note:** For each and every script listed below, take a closer look at each of them, make necessary modifications to the output path(s), and try to understand the commands used before actually running the code.
 
 
 - You can find **ALL** the scripts under this directory: `/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion`.
 - You can either **COPY** the scripts above to your own directory or make your own bash scripts.
 - If you’re copying over the scripts, make sure you have the correct **permission** (reading/writing) to run them.
-- If you’re making your own bash scripts, **make them executable before running the script**: `chmod +x /path/to/script.sh` .
 - Run each script using `./path/to/script.sh`
 - If you are unsure about any input/output files, you can refer to `/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/results` this folder (where I stored all output files when I tested this pipeline).
 
 ### Fastq → Bam → VCF
 
->[! Do the following before running ANY of the script]
+>**Do the following before running ANY of the script**
 >- `cd` to your folder where you want to strore/run the script
 >- Export LSF docker volumes:
 >	```bash
@@ -285,7 +281,7 @@ for sample_name in "${samplenames[@]}"; do
 done
 ```
 
->[! Do the following before proceed to the next script]
+>**Do the following before proceed to the next script**
 >- Copy-paste the following script(s) to your own folder:
 >	- `/storage1/fs1/jin810/Active/testing/ztang/code/CAKUT/liftover_hg38tob37_v2.py`
 >	- `/storage1/fs1/jin810/Active/testing/ztang/code/CAKUT/mergeBamMetrics.py`
@@ -391,13 +387,12 @@ bkill [job_id_1] [job_id_2] ...
 
 # 3. De Novo Variant Calling
 
->[!Note]
->Now you’ve done with all the pre-steps. We’re going to move on to call the denovo variants and annotate them using various tools. But first, what are De Novo variants? Why are they rare and important?
+>**Note:** Now you’ve done with all the pre-steps. We’re going to move on to call the denovo variants and annotate them using various tools. But first, what are De Novo variants? Why are they rare and important?
 
 
 ## Script to use
 
->[!Do the following before proceed to the next script:]
+>**Do the following before proceed to the next script:**
 >- Copy the following 3 scripts to your testing folder:
 >	- `/storage1/fs1/jin810/Active/testing/ztang/code/CAKUT/hail_denovo_v2.py`
 >	- `/storage1/fs1/jin810/Active/testing/ztang/code/CAKUT/VCF_to_VariantTable_with_ParentalGT_v4.py`
@@ -435,8 +430,7 @@ mode="ht"
 
 # 4. Annotaion
 
->[!Note]
->Once we obtained the variants, we need to further annotate them before we can manually interpret whether they’re disease causing (pathogenic) or not. In this pipeline, we use CADD, VEP, etc. to annotate/filter the variants gotten to leave only those that are likely pathogenic.
+>**Note:** Once we obtained the variants, we need to further annotate them before we can manually interpret whether they’re disease causing (pathogenic) or not. In this pipeline, we use CADD, VEP, etc. to annotate/filter the variants gotten to leave only those that are likely pathogenic.
 
 ## Script to use
 
@@ -562,7 +556,7 @@ denovo_out="${Denovo_path}/RLTO_12_denovo_20230905.ht"
 
 # 5. Plotreads
 
->[! Do the following before you proceed to next step]
+>**Do the following before you proceed to next step**
 >- Copy over the following scripts to your own directory
 >	- `/storage1/fs1/jin810/Active/testing/ztang/misc/test_RoTATion/Plotread_CMD.sh`
 >		- Change the paths in ==line 134 and 149== to your actual path
