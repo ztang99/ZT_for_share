@@ -123,7 +123,7 @@ done
 
 ### Reference paths DO NOT CHANGE ###
 REF="/storage1/fs1/bga/Active/gmsroot/gc2560/core/model_data/2887491634/build21f22873ebe0486c8e6f69c15435aa96/all_sequences.fa"
-BED="/storage1/fs1/jin810/Active/yung-chun/database/capture_bedfile/Exome-IDT_V1V2_span50bp.bed"
+BED="/storage1/fs1/jin810/Active/testing/yung-chun/database/capture_bedfile/Exome-IDT_V1V2_span50bp.bed"
 
 samplenames=("RLTO_12_Child_C" "RLTO_12_Dad_B" "RLTO_12_Mom_A")
 
@@ -175,8 +175,8 @@ done
 # bsub -Is -n 12 -M 160GB -R 'gpuhost rusage[mem=160GB] span[hosts=1]' -G compute-jin810 -q general-interactive -a 'docker(broadinstitute/gatk:latest)' /bin/bash
 
 ### Reference paths DO NOT CHANGE ###
-REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
-BED="/storage1/fs1/jin810/Active/yung-chun/database/capture_bedfile/Exome-IDT_V1V2_span50bp.bed"
+REF="/storage1/fs1/jin810/Active/References/2023_old_references/Homo_sapiens_assembly38.fasta"
+BED="/storage1/fs1/jin810/Active/testing/yung-chun/database/capture_bedfile/Exome-IDT_V1V2_span50bp.bed"
 
 ### Change the out_path accordingly ###
 out_path="/path/to/results"
@@ -211,7 +211,7 @@ tmp_dir="${DBI_path}/tmp"
 # bsub -Is -n 12 -M 160GB -R 'gpuhost rusage[mem=160GB] span[hosts=1]' -G compute-jin810 -q general-interactive -a 'docker(biocontainers/bcftools:v1.5_cv3)' /bin/bash
 
 ### Reference paths DO NOT CHANGE ###
-REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
+REF="/storage1/fs1/jin810/Active/References/2023_old_references/Homo_sapiens_assembly38.fasta"
 
 ### Change the out_path accordingly ###
 out_path="/path/to/results"
@@ -239,7 +239,7 @@ tmp_dir="${DBI_path}/tmp"
 # bsub -Is -n 4 -M 16GB -R 'gpuhost rusage[mem=16GB] span[hosts=1]' -G compute-jin810 -q general-interactive -a 'docker(sam16711/plink:latest)' /bin/bash
 
 ### Reference paths DO NOT CHANGE ###
-REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
+REF="/storage1/fs1/jin810/Active/References/2023_old_references/Homo_sapiens_assembly38.fasta"
 
 ### Change the out_path accordingly ###
 out_path="/path/to/results"
@@ -269,8 +269,8 @@ QC_path="${out_path}/Quality_Control"
 # bsub -Is -n 4 -M 16GB -R 'gpuhost rusage[mem=16GB] span[hosts=1]' -G compute-jin810 -q general-interactive -a 'docker(sam16711/bam_metrics:v1)' /bin/bash
 
 ### Reference paths DO NOT CHANGE ###
-REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
-BED="/storage1/fs1/jin810/Active/yung-chun/database/capture_bedfile/Exome-IDT_V1V2_span50bp.bed"
+REF="/storage1/fs1/jin810/Active/References/2023_old_references/Homo_sapiens_assembly38.fasta"
+BED="/storage1/fs1/jin810/Active/testing/yung-chun/database/capture_bedfile/Exome-IDT_V1V2_span50bp.bed"
 
 samplenames=("RLTO_12_Child_C" "RLTO_12_Dad_B" "RLTO_12_Mom_A")
 
@@ -300,7 +300,7 @@ done
 # bsub -Is -n 4 -M 16GB -R 'gpuhost rusage[mem=16GB] span[hosts=1]' -G compute-jin810 -q general-interactive -a 'docker(spashleyfu/ubuntu18_vep104:hail_gsutil)' /bin/bash
 
 ### Reference paths DO NOT CHANGE ###
-REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
+REF="/storage1/fs1/jin810/Active/References/2023_old_references/Homo_sapiens_assembly38.fasta"
 
 ### Change the out_path accordingly ###
 out_path="/path/to/results"
@@ -325,9 +325,9 @@ export JAVA_HOME="/opt/conda"
 # bsub -Is -n 4 -M 16GB -R 'gpuhost rusage[mem=16GB] span[hosts=1]' -G compute-jin810 -q general-interactive -a 'docker(dreammaerd/laser_trace_v2.04:latest)' /bin/bash
 
 ### Reference paths DO NOT CHANGE ###
-REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
-GDB="/storage1/fs1/jin810/Active/yung-chun/database/reference/LASER/HGDP_938.geno"
-GRC="/storage1/fs1/jin810/Active/yung-chun/database/reference/LASER/HGDP_938.RefPC.coord"
+REF="/storage1/fs1/jin810/Active/References/2023_old_references/Homo_sapiens_assembly38.fasta"
+GDB="/storage1/fs1/jin810/Active/testing/yung-chun/database/reference/LASER/HGDP_938.geno"
+GRC="/storage1/fs1/jin810/Active/testing/yung-chun/database/reference/LASER/HGDP_938.RefPC.coord"
 
 ### Change the out_path accordingly ###
 out_path="/path/to/results"
@@ -357,9 +357,9 @@ trace -p "${QC_path}/my_parameterfile" -k 10 -K 20 -s "${QC_path}/RLTO_12_PCA_Al
     # bsub -Is -n 4 -M 16GB -R 'gpuhost rusage[mem=16GB] span[hosts=1]' -G compute-jin810 -q general-interactive -a 'docker(dreammaerd/r-jupyter:4.2.1)' /bin/bash
     
     ### Reference paths DO NOT CHANGE ###
-    REF="/storage1/fs1/jin810/Active/reference/Homo_sapiens_assembly38.fasta"
-    GDB="/storage1/fs1/jin810/Active/yung-chun/database/reference/LASER/HGDP_938.geno"
-    GRC="/storage1/fs1/jin810/Active/yung-chun/database/reference/LASER/HGDP_938.RefPC.coord"
+    REF="/storage1/fs1/jin810/Active/References/2023_old_references/Homo_sapiens_assembly38.fasta"
+    GDB="/storage1/fs1/jin810/Active/testing/yung-chun/database/reference/LASER/HGDP_938.geno"
+    GRC="/storage1/fs1/jin810/Active/testing/yung-chun/database/reference/LASER/HGDP_938.RefPC.coord"
     
     ### Change the out_path accordingly ###
     out_path="/path/tp/results"
